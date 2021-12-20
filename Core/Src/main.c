@@ -1,18 +1,15 @@
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * ASSIGNMENT 4 - Mustafa Karamagi
-  *
-  *
-  ******************************************************************************
-  */
+******************************************************************************
+* @file           : main.c
+* @brief          : Main program body
+******************************************************************************
+* ASSIGNMENT 4 - Mustafa Karamagi
+*
+*
+******************************************************************************
+*/
 
 #include "main.h"
-
-
-
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
@@ -144,8 +141,10 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4  -
- * Sets the Interrupt when BLUE_BUTTON (PC14)
- * is pressed and Toggles the LED2 on pin PB14
+ * Interrupt is set when BLUE_BUTTON (PC14)
+ * is pressed and a FLAG is set if FLAG == 0 and this FLAG is used to Toggle On the blinking
+ * LED2 (on pin PB14) in the main function. If BLUE_BUTTON is pressed when FLAG == 1, FLAG is reset
+ * and used in the main function to Toggle/Turn Off the blinking LED2.
  *
  * */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
